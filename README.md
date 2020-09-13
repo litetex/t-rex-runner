@@ -5,6 +5,7 @@ This is an updated version of the t-rex-runner game, orginally extrated by [wayo
 
 You can find a online version at https://litetex.github.io/t-rex-runner/
 
+![demo dino](dino.gif)
 
 ## How to run it
 
