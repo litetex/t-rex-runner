@@ -1,0 +1,5 @@
+# By default ignore everything
+*
+
+# Allow all files from src
+!src/*
