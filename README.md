@@ -29,8 +29,8 @@ docker rm -f trex-runner-demo
 ```
 
 ## How to extract the required code
-* Clone chromium <br/>
-  * Chromium is a really large repo (as of now it has nearly 1 Mio. Commits and the default branch with only the latest commits alone consumes 4GB of disk memory) so you should clone it only optimized: 
+* Clone the [chromium repo](https://chromium.googlesource.com/chromium/src)<br/>
+  * Chromium is a really large repo (as of now it has nearly 1 million Commits and the default branch with only the latest commits alone consumes 4GB of disk memory) so you should clone it only optimized: 
   ```
   git clone --depth 1 --branch master https://chromium.googlesource.com/chromium/src
   ```
