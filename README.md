@@ -30,6 +30,11 @@ docker run -it --name trex-runner-demo -p 8080:80 my-trex-runner-demo
 docker rm -f trex-runner-demo
 ```
 
+All in one:
+```
+docker build -t my-trex-runner-demo . && docker run -it --name trex-runner-demo -p 8080:80 my-trex-runner-demo && docker rm -f trex-runner-demo
+```
+
 ## How to extract the required code
 * Clone the [chromium repo](https://chromium.googlesource.com/chromium/src)<br/>
   * Chromium is a really large repo (as of now it has nearly 1 million Commits and the default branch with only the latest commits alone consumes 4GB of disk memory) so you should clone it only optimized: 
