@@ -1,4 +1,4 @@
-name: Push to Docker CI
+name: GH-Pages/Master CI
 
 on:
   push:
@@ -25,11 +25,11 @@ jobs:
           repository: litetex/t-rex-runner
           tags: "latest,master-${{ steps.tagvars.outputs.sha_short }}-${{ steps.tagvars.outputs.build_datetime }}"
           
-      - name: Build and push Dockerimage to GitHUb
+      - name: Build and push Dockerimage to GitHub
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: ${{ github.repository }}/t-rex-runner
-          tags: "latest,master-${{ steps.tagvars.outputs.sha_short }}-${{ steps.tagvars.outputs.build_datetime }}"
+          tags: "latest"
