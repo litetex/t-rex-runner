@@ -1,0 +1,27 @@
+name: GH-Pages/Master CI
+
+on:
+  push:
+    branches: gh-pages
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Generate tag vars
+        id: tagvars
+        run: |
+         echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+         echo "::set-output name=build_datetime::$(date -u +%Y%m%d-%H%M)"
+          
+      - name: Build and push Dockerimage to GitHub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: ${{ github.repository }}/t-rex-runner
+          tags: "develop,develop-${{ steps.tagvars.outputs.sha_short }}-${{ steps.tagvars.outputs.build_datetime }}"
