@@ -12,7 +12,9 @@ You can find a online version at https://litetex.github.io/t-rex-runner/
 Unfortunately it's only possible to run the code on a webserver.<br/>
 You can find the exact reason [here](https://stackoverflow.com/questions/48753691/cannot-access-cssrules-from-local-css-file-in-chrome-64)
 
-However here is a quick setup using docker
+A simple predefined image exists at [DockerHub](https://hub.docker.com/r/litetex/t-rex-runner)
+
+However here is a quick setup if you wan't to build it yourself using docker
 * Get Docker
 * Build it with
 ```
