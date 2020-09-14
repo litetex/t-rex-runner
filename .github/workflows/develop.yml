@@ -24,4 +24,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           repository: ${{ github.repository }}/t-rex-runner
-          tags: "develop-${{ steps.tagvars.outputs.sha_short }}-${{ steps.tagvars.outputs.build_datetime }},develop"
+          tags: "develop"
