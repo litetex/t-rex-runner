@@ -17,21 +17,21 @@ A simple predefined image exists at [DockerHub](https://hub.docker.com/r/litetex
 However here is a quick setup if you wan't to build it yourself using docker
 * Get Docker
 * Build it with
-```
+```SHELL
 docker build -t my-trex-runner-demo .
 ```
 * Start it with 
-```
+```SHELL
 docker run -it --name trex-runner-demo -p 8080:80 my-trex-runner-demo
 ```
 * Open http://localhost:8080
 * Shutdown the server/container with 
-```
+```SHELL
 docker rm -f trex-runner-demo
 ```
 
 All in one:
-```
+```SHELL
 docker build -t my-trex-runner-demo . && docker run -it --name trex-runner-demo -p 8080:80 my-trex-runner-demo && docker rm -f trex-runner-demo
 ```
 
