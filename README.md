@@ -1,4 +1,8 @@
-## t-rex-runner
+[![Online version](https://img.shields.io/website?down_message=not%20running%20%F0%9F%92%A4&label=online%20version&style=flat-square&up_message=running%20%F0%9F%A6%96&url=https%3A%2F%2Flitetex.github.io%2Ft-rex-runner%2F)](https://litetex.github.io/t-rex-runner/)
+[![Latest stable docker version](https://img.shields.io/badge/docker-latest-%232684ff?style=flat-square)](https://hub.docker.com/r/litetex/t-rex-runner/tags?name=latest)
+
+## t-rex-runner 🦖
+
 This is an updated version of the t-rex-runner game, originally extracted by [wayou/t-rex-runner](https://github.com/wayou/t-rex-runner)
 
 [source](https://cs.chromium.org/chromium/src/components/neterror/resources/offline.js) from chromium
