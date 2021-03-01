@@ -54,7 +54,7 @@ docker build -t my-trex-runner-demo . && docker run -it --name trex-runner-demo 
 * Clean not required stuff for the html file, e.g. i18n or not used parts of the div
 * The sounds have to be served encoded in Base64, so encode them and add them directly
 * Remove the complicated ``neterror.js`` and replace it at the end of the body with a simple ``<script>new Runner('.interstitial-wrapper');</script>``
-* Clean up ``offline.js`` by removing external dependencies or merging them into the file, e.g. ``loadTimeData`` is only used to determine if [the game should be disabled](https://source.chromium.org/chromium/chromium/src/+/master:components/neterror/resources/offline.js;l=243-267), which we totally don't need
+* Clean up ``offline.js`` by removing external dependencies or merging them into the file<br> e.g. ``loadTimeData`` is only used to determine if [the game should be disabled](https://source.chromium.org/chromium/chromium/src/+/master:components/neterror/resources/offline.js;l=243-267), which we totally don't need
 * The JS-Constant ``<script>const HIDDEN_CLASS = 'hidden';</script>`` is required
-* Simplify the stylesheet into a single stylesheet and clean up not required stuff
-* Remove not required images
+* Simplify the stylesheets into a single one and clean up not required stuff
+* Remove unnecessary images
