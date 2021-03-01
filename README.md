@@ -26,17 +26,17 @@ docker build -t my-trex-runner-demo .
 ```
 * Start it with 
 ```SHELL
-docker run -it --name trex-runner-demo -p 8080:80 my-trex-runner-demo
+docker run --rm -it --name trex-runner-demo -p 8080:80 my-trex-runner-demo
 ```
 * Open http://localhost:8080
-* Shutdown the server/container with 
+* Shutdown the server/container with ``Ctrl + C`` or by running
 ```SHELL
 docker rm -f trex-runner-demo
 ```
 
 All in one:
 ```SHELL
-docker build -t my-trex-runner-demo . && docker run -it --name trex-runner-demo -p 8080:80 my-trex-runner-demo && docker rm -f trex-runner-demo
+docker build -t my-trex-runner-demo . && docker run --rm -it --name trex-runner-demo -p 8080:80 my-trex-runner-demo
 ```
 
 ## How to extract the required code
