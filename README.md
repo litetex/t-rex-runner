@@ -1,4 +1,8 @@
-## t-rex-runner
+[![Online version](https://img.shields.io/website?down_message=down%20%F0%9F%92%A4&label=online%20version&style=flat-square&up_message=running%20%F0%9F%A6%96&url=https%3A%2F%2Flitetex.github.io%2Ft-rex-runner%2F)](https://litetex.github.io/t-rex-runner/)
+[![Latest stable docker version](https://img.shields.io/badge/docker-latest-%232684ff?style=flat-square)](https://hub.docker.com/r/litetex/t-rex-runner/tags?name=latest)
+
+## t-rex-runner 🦖
+
 This is an updated version of the t-rex-runner game, originally extracted by [wayou/t-rex-runner](https://github.com/wayou/t-rex-runner)
 
 [source](https://cs.chromium.org/chromium/src/components/neterror/resources/offline.js) from chromium
@@ -22,17 +26,17 @@ docker build -t my-trex-runner-demo .
 ```
 * Start it with 
 ```SHELL
-docker run -it --name trex-runner-demo -p 8080:80 my-trex-runner-demo
+docker run --rm -it --name trex-runner-demo -p 8080:80 my-trex-runner-demo
 ```
 * Open http://localhost:8080
-* Shutdown the server/container with 
+* Shutdown the server/container with ``Ctrl + C`` or by running
 ```SHELL
 docker rm -f trex-runner-demo
 ```
 
 All in one:
 ```SHELL
-docker build -t my-trex-runner-demo . && docker run -it --name trex-runner-demo -p 8080:80 my-trex-runner-demo && docker rm -f trex-runner-demo
+docker build -t my-trex-runner-demo . && docker run --rm -it --name trex-runner-demo -p 8080:80 my-trex-runner-demo
 ```
 
 ## How to extract the required code
@@ -47,9 +51,10 @@ docker build -t my-trex-runner-demo . && docker run -it --name trex-runner-demo 
 * Extract those dependencies (copy the directories) into a new directory
 
 ## Migration
-* Clean not required stuff for the html file, e.g. i18n or not used parts of the div
+* Clean not required stuff from the html file, e.g. i18n or not used parts of the div
 * The sounds have to be served encoded in Base64, so encode them and add them directly
 * Remove the complicated ``neterror.js`` and replace it at the end of the body with a simple ``<script>new Runner('.interstitial-wrapper');</script>``
-* Clean up ``offline.js`` by removing external dependencies or merging them into the file, e.g. ``loadTimeData`` is only used to determine if [the game should be disabled](https://source.chromium.org/chromium/chromium/src/+/master:components/neterror/resources/offline.js;l=243-267), which we totally don't need
-* Simplify the stylesheet into a single stylesheet and clean up not required stuff
-* Remove not required images
+* Clean up ``offline.js`` by removing external dependencies or merging them into the file<br> e.g. ``loadTimeData`` is only used to determine if [the game should be disabled](https://source.chromium.org/chromium/chromium/src/+/c117d8c5553c5143dd8723575a5d6113e8169490:components/neterror/resources/offline.js;l=243-267), which we totally don't need
+* The JS-Constant ``<script>const HIDDEN_CLASS = 'hidden';</script>`` is required
+* Simplify the stylesheets into a single one and clean up not required stuff
+* Remove unnecessary images
