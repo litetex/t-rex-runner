@@ -8,11 +8,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-      attestations: write
-      id-token: write
     steps:
       - uses: actions/checkout@v5
 
@@ -32,7 +27,6 @@ jobs:
         with:
           images: |
             ${{ secrets.DOCKERHUB_USERNAME }}/t-rex-runner
-            ghcr.io/${{ github.repository }}
           tags: |
             type=sha
             latest
